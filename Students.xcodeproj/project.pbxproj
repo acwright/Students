@@ -14,7 +14,7 @@
 		4525A1E8237E3737008340A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525A1E7237E3737008340A5 /* Assets.xcassets */; };
 		4525A1EB237E3737008340A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525A1EA237E3737008340A5 /* Preview Assets.xcassets */; };
 		4525A1EE237E3737008340A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4525A1EC237E3737008340A5 /* LaunchScreen.storyboard */; };
-		4525A1F9237E3E47008340A5 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525A1F8237E3E47008340A5 /* ListView.swift */; };
+		4525A1F9237E3E47008340A5 /* FetchedForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525A1F8237E3E47008340A5 /* FetchedForEach.swift */; };
 		4525A1FF237E575B008340A5 /* Student+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525A1FE237E575B008340A5 /* Student+Identifiable.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		4525A1EA237E3737008340A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4525A1ED237E3737008340A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4525A1EF237E3737008340A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4525A1F8237E3E47008340A5 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		4525A1F8237E3E47008340A5 /* FetchedForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedForEach.swift; sourceTree = "<group>"; };
 		4525A1FE237E575B008340A5 /* Student+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+Identifiable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				4525A1E5237E3736008340A5 /* MainView.swift */,
-				4525A1F8237E3E47008340A5 /* ListView.swift */,
+				4525A1F8237E3E47008340A5 /* FetchedForEach.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 			files = (
 				4525A1DF237E3735008340A5 /* AppDelegate.swift in Sources */,
 				4525A1E4237E3736008340A5 /* Students.xcdatamodeld in Sources */,
-				4525A1F9237E3E47008340A5 /* ListView.swift in Sources */,
+				4525A1F9237E3E47008340A5 /* FetchedForEach.swift in Sources */,
 				4525A1FF237E575B008340A5 /* Student+Identifiable.swift in Sources */,
 				4525A1E6237E3736008340A5 /* MainView.swift in Sources */,
 				4525A1E1237E3736008340A5 /* SceneDelegate.swift in Sources */,

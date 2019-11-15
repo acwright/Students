@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  ListForEach.swift
 //  Students
 //
 //  Created by Aaron Wright on 11/14/19.
@@ -9,7 +9,7 @@
 import SwiftUI
 import CoreData
 
-struct ListView<T, Content>: View where T : Identifiable, T : NSManagedObject, Content : View {
+struct FetchedForEach<T, Content>: View where T : Identifiable, T : NSManagedObject, Content : View {
     
     let content: (T) -> Content
     
@@ -30,10 +30,8 @@ struct ListView<T, Content>: View where T : Identifiable, T : NSManagedObject, C
     }
     
     var body: some View {
-        List {
-            ForEach(results) { result in
-                self.content(result)
-            }
+        ForEach(results) { result in
+            self.content(result)
         }
     }
     
@@ -42,7 +40,7 @@ struct ListView<T, Content>: View where T : Identifiable, T : NSManagedObject, C
 struct ListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ListView() { (student: Student) in
+        FetchedForEach() { (student: Student) in
             Text(student.name ?? "Unknown")
         }
     }

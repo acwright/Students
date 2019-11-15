@@ -20,13 +20,15 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                ListView(
-                    predicate: self.predicate,
-                    sortDescriptors: [
-                        NSSortDescriptor(keyPath: \Student.name, ascending: true)
-                    ]
-                ) { (student: Student) in
-                    Text(student.name ?? "Unknown")
+                List {
+                    FetchedForEach(
+                        predicate: self.predicate,
+                        sortDescriptors: [
+                            NSSortDescriptor(keyPath: \Student.name, ascending: true)
+                        ]
+                    ) { (student: Student) in
+                        Text(student.name ?? "Unknown")
+                    }
                 }
                 
                 Text(self.query ?? "All")
