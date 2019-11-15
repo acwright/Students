@@ -14,7 +14,7 @@ struct ListView: View {
     var studentsRequest: FetchRequest<Student>
     var students: FetchedResults<Student>{ studentsRequest.wrappedValue }
 
-    init(query: String){
+    init(query: String) {
         self.query = query
         self.studentsRequest = FetchRequest(
             entity: Student.entity(),
