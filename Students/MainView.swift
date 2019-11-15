@@ -11,7 +11,7 @@ import CoreData
 
 struct MainView: View {
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
-    @State var query: String = ""
+    @State var query: String? = nil
     
     var body: some View {
         NavigationView {
@@ -19,11 +19,7 @@ struct MainView: View {
                 ListView(query: self.query)
                 
                 Button(action: {
-                    if self.query.count > 0 {
-                        self.query = ""
-                    } else {
-                        self.query = "White"
-                    }
+                    self.query = self.query != nil ? nil : "White"
                 }) {
                     Text("Filter")
                 }

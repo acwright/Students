@@ -10,18 +10,18 @@ import SwiftUI
 
 struct ListView: View {
     
-    var query: String
+    var query: String?
     var studentsRequest: FetchRequest<Student>
     var students: FetchedResults<Student>{ studentsRequest.wrappedValue }
 
-    init(query: String) {
+    init(query: String? = nil) {
         self.query = query
         self.studentsRequest = FetchRequest(
             entity: Student.entity(),
             sortDescriptors: [
                 NSSortDescriptor(keyPath: \Student.name, ascending: true)
             ],
-            predicate: query.count > 0 ? NSPredicate(format: "%K contains[cd] %@", #keyPath(Student.name), query) : NSPredicate(value: true)
+            predicate: query != nil ? NSPredicate(format: "%K contains[cd] %@", #keyPath(Student.name), query!) : NSPredicate(value: true)
         )
     }
     
