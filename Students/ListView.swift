@@ -7,28 +7,32 @@
 //
 
 import SwiftUI
+import CoreData
 
-struct ListView: View {
+struct ListView<T, Content>: View where T : Identifiable, T : NSManagedObject, Content : View {
     
-    var query: String?
-    var studentsRequest: FetchRequest<Student>
-    var students: FetchedResults<Student>{ studentsRequest.wrappedValue }
+    let content: (T) -> Content
+    
+    var request: FetchRequest<T>
+    var results: FetchedResults<T>{ request.wrappedValue }
 
-    init(query: String? = nil) {
-        self.query = query
-        self.studentsRequest = FetchRequest(
-            entity: Student.entity(),
-            sortDescriptors: [
-                NSSortDescriptor(keyPath: \Student.name, ascending: true)
-            ],
-            predicate: query != nil ? NSPredicate(format: "%K contains[cd] %@", #keyPath(Student.name), query!) : NSPredicate(value: true)
+    init(
+        predicate: NSPredicate = NSPredicate(value: true),
+        sortDescriptors: [NSSortDescriptor] = [],
+        @ViewBuilder content: @escaping (T) -> Content
+    ) {
+        self.content = content
+        self.request = FetchRequest(
+            entity: T.entity(),
+            sortDescriptors: sortDescriptors,
+            predicate: predicate
         )
     }
     
     var body: some View {
         List {
-            ForEach(self.students, id: \.id) { student in
-                Text(student.name ?? "Unknown")
+            ForEach(results) { result in
+                self.content(result)
             }
         }
     }
@@ -38,7 +42,9 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ListView(query: "White")
+        ListView() { (student: Student) in
+            Text(student.name ?? "Unknown")
+        }
     }
     
 }
