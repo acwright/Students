@@ -17,24 +17,47 @@ struct MainView: View {
     let firstNames = ["Sally", "Aaron", "Kim", "Joe", "Amy", "Bob"]
     let lastNames = ["Smith", "Jones", "White", "Jackson", "Hall"]
     
+    var sortDescriptors: [NSSortDescriptor] {
+        [NSSortDescriptor(keyPath: \Student.name, ascending: true)]
+    }
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                List {
-                    FetchedForEach(
-                        predicate: self.predicate,
-                        sortDescriptors: [
-                            NSSortDescriptor(keyPath: \Student.name, ascending: true)
-                        ]
-                    ) { (student: Student) in
-                        Text(student.name ?? "Unknown")
+                FetchedObjects(
+                    predicate: self.predicate,
+                    sortDescriptors: self.sortDescriptors)
+                { (students: [Student]) in
+                    List {
+                        ForEach(students) { student in
+                            Text(student.name ?? "NA")
+                        }
                     }
                 }
                 
-                Text(self.query ?? "All")
+                Text("Filter: \(self.query ?? "All")")
                     .frame(maxWidth: .infinity, maxHeight: 60)
                     .background(Color.green)
                     .foregroundColor(Color.white)
+                
+                FetchedObject(
+                    predicate: self.predicate,
+                    sortDescriptors: self.sortDescriptors,
+                    empty: {
+                        Text("Found: No Student")
+                            .frame(maxWidth: .infinity, maxHeight: 60)
+                            .background(Color.pink)
+                            .foregroundColor(Color.white)
+                    }
+                ) { (student: Student) in
+                    Text("Found: \(student.name ?? "")")
+                        .frame(maxWidth: .infinity, maxHeight: 60)
+                        .background(Color.pink)
+                        .foregroundColor(Color.white)
+                }
+                
+                Divider()
+                    .padding([.top, .bottom])
                 
                 HStack(spacing: 0) {
                     Button(action: {

@@ -14,8 +14,10 @@
 		4525A1E8237E3737008340A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525A1E7237E3737008340A5 /* Assets.xcassets */; };
 		4525A1EB237E3737008340A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525A1EA237E3737008340A5 /* Preview Assets.xcassets */; };
 		4525A1EE237E3737008340A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4525A1EC237E3737008340A5 /* LaunchScreen.storyboard */; };
-		4525A1F9237E3E47008340A5 /* FetchedForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525A1F8237E3E47008340A5 /* FetchedForEach.swift */; };
+		4525A1F9237E3E47008340A5 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525A1F8237E3E47008340A5 /* FetchedObjects.swift */; };
 		4525A1FF237E575B008340A5 /* Student+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525A1FE237E575B008340A5 /* Student+Identifiable.swift */; };
+		45F7FE1D2380A2970056817E /* FetchedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7FE1C2380A2970056817E /* FetchedObject.swift */; };
+		45F7FE202380A84A0056817E /* Student+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F7FE1F2380A84A0056817E /* Student+Observers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 		4525A1EA237E3737008340A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4525A1ED237E3737008340A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4525A1EF237E3737008340A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4525A1F8237E3E47008340A5 /* FetchedForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedForEach.swift; sourceTree = "<group>"; };
+		4525A1F8237E3E47008340A5 /* FetchedObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
 		4525A1FE237E575B008340A5 /* Student+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+Identifiable.swift"; sourceTree = "<group>"; };
+		45F7FE1C2380A2970056817E /* FetchedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedObject.swift; sourceTree = "<group>"; };
+		45F7FE1F2380A84A0056817E /* Student+Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+Observers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				4525A1DE237E3735008340A5 /* AppDelegate.swift */,
 				4525A1E0237E3736008340A5 /* SceneDelegate.swift */,
 				4525A1F7237E376C008340A5 /* Views */,
+				45F7FE1B2380A27E0056817E /* Components */,
 				4525A1FD237E574D008340A5 /* Extensions */,
 				4525A1F6237E3756008340A5 /* Supporting Files */,
 			);
@@ -95,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				4525A1E5237E3736008340A5 /* MainView.swift */,
-				4525A1F8237E3E47008340A5 /* FetchedForEach.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -104,8 +108,18 @@
 			isa = PBXGroup;
 			children = (
 				4525A1FE237E575B008340A5 /* Student+Identifiable.swift */,
+				45F7FE1F2380A84A0056817E /* Student+Observers.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		45F7FE1B2380A27E0056817E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				45F7FE1C2380A2970056817E /* FetchedObject.swift */,
+				4525A1F8237E3E47008340A5 /* FetchedObjects.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +195,11 @@
 			files = (
 				4525A1DF237E3735008340A5 /* AppDelegate.swift in Sources */,
 				4525A1E4237E3736008340A5 /* Students.xcdatamodeld in Sources */,
-				4525A1F9237E3E47008340A5 /* FetchedForEach.swift in Sources */,
+				45F7FE202380A84A0056817E /* Student+Observers.swift in Sources */,
+				4525A1F9237E3E47008340A5 /* FetchedObjects.swift in Sources */,
 				4525A1FF237E575B008340A5 /* Student+Identifiable.swift in Sources */,
 				4525A1E6237E3736008340A5 /* MainView.swift in Sources */,
+				45F7FE1D2380A2970056817E /* FetchedObject.swift in Sources */,
 				4525A1E1237E3736008340A5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
